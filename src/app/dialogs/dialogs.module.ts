@@ -11,7 +11,7 @@ import { MatButtonModule, MatDialogModule } from '@angular/material';
   ],
   declarations: [ConfirmDialogComponent],
   exports: [ConfirmDialogComponent],
-  //entryComponents: [ConfirmDialogComponent],
+  entryComponents: [ConfirmDialogComponent],
   providers: [DialogsService]
 })
 export class DialogsModule { }

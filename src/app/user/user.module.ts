@@ -4,7 +4,7 @@ import { AppCommonModule } from '../app-common/app-common.module';
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserPageComponent } from './user-page/user-page.component';
-
+import {UserService} from './user.service';
 @NgModule({
   imports: [ 
     CommonModule,
@@ -12,6 +12,7 @@ import { UserPageComponent } from './user-page/user-page.component';
     UserRoutingModule
   ],
   declarations: [UserPageComponent],
-  exports: [UserPageComponent]
+  exports: [UserPageComponent],
+  providers:[UserService]
 })
 export class UserModule { }

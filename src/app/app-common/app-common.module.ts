@@ -7,10 +7,14 @@ import {
   MatIconModule,
   MatCardModule,
   MatMenuModule,
-  MatButtonModule
+  MatButtonModule,
+  MatTableModule,
+  MatPaginatorModule,
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DialogsModule } from '../dialogs/dialogs.module';
+import {DataTableModule} from '../data-table/data-table.module';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -21,8 +25,11 @@ import { DialogsModule } from '../dialogs/dialogs.module';
     MatCardModule,
     MatMenuModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
     FlexLayoutModule,
-    DialogsModule
+    DialogsModule,
+    DataTableModule
   ],
   declarations: [],
   exports: [
@@ -33,8 +40,11 @@ import { DialogsModule } from '../dialogs/dialogs.module';
     MatCardModule,
     MatMenuModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
     FlexLayoutModule,
-    DialogsModule
+    DialogsModule,
+    DataTableModule
   ]
 })
 export class AppCommonModule { }

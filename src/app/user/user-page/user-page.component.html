@@ -1,9 +1,18 @@
-<div class="content" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="16px">
-    <mat-card fxFlex="80">
-        user component works!
-    </mat-card>
+<mat-table #table [dataSource]="dataSource">
 
-    <mat-card fxFlex fxLayout="column" fxLayoutGap="14px">
-        aside
-    </mat-card>
-</div>
+
+    <!-- ID Column -->
+    <ng-container cdkColumnDef="userId">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header> ID </mat-header-cell>
+        <mat-cell *cdkCellDef="let row"> {{row.id}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+
+      <mat-row *cdkRowDef="let row; columns: displayedColumns;">
+
+      </mat-row> 
+
+</mat-table> 
+
+ 
