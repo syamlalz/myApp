@@ -10,7 +10,7 @@ import {
   MatButtonModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { DialogsModule } from '../dialogs/dialogs.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -21,7 +21,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatMenuModule,
     MatButtonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    DialogsModule
   ],
   declarations: [],
   exports: [
@@ -32,7 +33,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatMenuModule,
     MatButtonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    DialogsModule
   ]
 })
 export class AppCommonModule { }

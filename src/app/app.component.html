@@ -1,12 +1,9 @@
- 
-<div fxLayout="column" fxFlex [class.dark-theme]= "isDarkTheme" style="height:500px"> 
-        
-    <mat-sidenav-container fxFlex> 
-        <mat-sidenav #mainSideNav mode="side" opened >
+<div fxLayout="column" fxFlex [class.dark-theme]= "isDarkTheme"> 
+     <mat-sidenav-container fxFlex> 
+        <mat-sidenav #mainSideNav mode="side" >
                 <mat-toolbar>
                         <img src="../assets/logo.png" style="height:80%"> <!--{{appName}}-->
                 </mat-toolbar>
-
                 <mat-nav-list>
                         <mat-list-item *ngFor="let navItem of mainMenuItems">                                
                                 <button mat-icon-button (click)="showInfo(link)">
@@ -15,28 +12,27 @@
                                 <a matLine [routerLink]="[navItem.path]">{{ navItem.title }}</a>
                         </mat-list-item>
                 </mat-nav-list>
-
-                <!--<mat-list>
-                            <mat-list-item> User </mat-list-item>
-                            <mat-list-item> Salt </mat-list-item>
-                            <mat-list-item> Paprika </mat-list-item>
-                </mat-list>-->
         </mat-sidenav> 
-        <mat-toolbar color="primary" > <span   style="width:110px"></span>
-                <button mat-icon-button (click)="mainSideNav.toggle()"> 
-                        <mat-icon *ngIf="mainSideNav.opened" >chevron_left</mat-icon>
-                        <mat-icon *ngIf="!mainSideNav.opened">home</mat-icon>
-                </button>
-                {{(activeMenuItem$ | async)?.title}}
-                <span fxFlex></span>
-                <button mat-icon-button [matMenuTriggerFor]="themeMenu"> 
-                        <mat-icon>more_vert</mat-icon> 
-                </button>
-        </mat-toolbar>  
-        <router-outlet></router-outlet>
+                
+                <mat-sidenav-content >
+                <mat-toolbar  color="primary" > <!--<span   style="width:110px"></span>-->
+                        <button mat-icon-button (click)="mainSideNav.toggle()"> 
+                                <mat-icon *ngIf="mainSideNav.opened" >chevron_left</mat-icon>
+                                <mat-icon *ngIf="!mainSideNav.opened">menu</mat-icon>
+                        </button>
+                        {{(activeMenuItem$ | async)?.title}}
+                        <span fxFlex></span>
+                        <button mat-icon-button [matMenuTriggerFor]="themeMenu"> 
+                                <mat-icon>more_vert</mat-icon> 
+                        </button>
+                </mat-toolbar>  
+                <router-outlet></router-outlet> 
+        </mat-sidenav-content>
     </mat-sidenav-container>
 
     <mat-menu #themeMenu  x-position="before">
+                <button mat-menu-item (click)= "openDialog()">Open Dialog</button>
+    
         <button mat-menu-item (click)= "isDarkTheme = !isDarkTheme">Toggle Theme</button>
     </mat-menu>
 
