@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "path": "user",
+      "title": "Users",
+      "icon": "account_circle"
+    },
+    {
+      "path": "menu2",
+      "title": "menu2",
+      "icon": "info"
+    } ,
+    {
+      "path": "menu3",
+      "title": "menu3",
+      "icon": "info"
+    } 
+  ]
+}

@@ -5,7 +5,9 @@ import {
   MatToolbarModule,
   MatListModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
+  MatMenuModule,
+  MatButtonModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -17,6 +19,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatListModule,
     MatIconModule,
     MatCardModule,
+    MatMenuModule,
+    MatButtonModule,
     FlexLayoutModule
   ],
   declarations: [],
@@ -26,6 +30,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatListModule,
     MatIconModule,
     MatCardModule,
+    MatMenuModule,
+    MatButtonModule,
     FlexLayoutModule
   ]
 })
