@@ -1,15 +1,37 @@
 import { Injectable } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 import { Http, Response } from '@angular/http';
 import { Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map'; 
-
+import 'rxjs/add/operator/filter';
 @Injectable()
 export class AppToolbarService {
+  activeMenuItem$: Observable<MenuItem>;
+  constructor( private http:Http, private router: Router, private titleService: Title) {
+    this.activeMenuItem$ = this.router.events
+    .filter(e => e instanceof NavigationEnd)
+    .map(_ => this.router.routerState.root)
+    .map(route => {
+        let active = this.lastRouteWithMenuItem(route.root);
+        this.titleService.setTitle(active.title);
+        return active;
+    });
+  }
 
-  constructor( private http:Http) {
-      
+  private lastRouteWithMenuItem(route: ActivatedRoute): MenuItem {
+      let lastMenu = undefined;
+      do { lastMenu = this.extractMenu(route) || lastMenu; }
+      while ((route = route.firstChild));
+      return lastMenu;
+  }
+
+  private extractMenu(route: ActivatedRoute): MenuItem {
+      let cfg = route.routeConfig;
+      return cfg && cfg.data && cfg.data.title
+          ? { path: cfg.path, title: cfg.data.title, icon: cfg.data.icon }
+          : undefined
   }
 
   getMenuItems(): Observable<MenuItem[]>{

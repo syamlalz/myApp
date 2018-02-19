@@ -12,6 +12,6 @@ import { UserPageComponent } from './user-page/user-page.component';
     UserRoutingModule
   ],
   declarations: [UserPageComponent],
-  exports: []
+  exports: [UserPageComponent]
 })
 export class UserModule { }

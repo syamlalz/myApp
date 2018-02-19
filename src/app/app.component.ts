@@ -11,13 +11,13 @@ export class AppComponent {
   appName = 'My App';
   isDarkTheme = false;
   mainMenuItems;
-  activeMenuItem$: Observable<MenuItem[]>;
+  activeMenuItem$ : Observable<any>;
   constructor(private toolbarService:AppToolbarService) {
+    this.activeMenuItem$ = this.toolbarService.activeMenuItem$;
     this.toolbarService.getMenuItems().subscribe(
       (menuList: MenuItem[]) => {
         this.mainMenuItems = menuList;
       }
-    );
-   // this.activeMenuItem$ = this.toolbarService.activeMenuItem$;
+    ); 
   }
 }

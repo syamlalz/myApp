@@ -1,19 +1,19 @@
 {
   "data": [
     {
-      "path": "user",
+      "path": "users",
       "title": "Users",
       "icon": "account_circle"
     },
     {
-      "path": "menu2",
-      "title": "menu2",
-      "icon": "info"
+      "path": "roles",
+      "title": "Roles",
+      "icon": "control_point"
     } ,
     {
-      "path": "menu3",
-      "title": "menu3",
-      "icon": "info"
+      "path": "privilages",
+      "title": "Privilages",
+      "icon": "lock_open"
     } 
   ]
 }

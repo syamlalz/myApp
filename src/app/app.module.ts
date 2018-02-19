@@ -6,7 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppToolbarService } from './app-toolbar/app-toolbar.service';
 import { AppRoutingModule } from './app-routing.module';
-import {UserModule} from './user/user.module'; 
+import { UserModule } from './user/user.module'; 
+import { RoleModule } from './role/role.module'; 
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +17,8 @@ import {UserModule} from './user/user.module';
     HttpModule,
     BrowserAnimationsModule,
     AppCommonModule,
-    UserModule, 
+    UserModule,
+    RoleModule,
     AppRoutingModule 
     
   ],

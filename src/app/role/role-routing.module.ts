@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserPageComponent } from './user-page/user-page.component';
+import { RolePageComponent } from './role-page/role-page.component';
 
 const routes: Routes = [{
-  path:'users',
-  component:UserPageComponent,
-  data: {
-    title: 'User page'
+  path: 'roles',
+  component: RolePageComponent,
+  data:{
+    title: 'Role Page'
   }
 }];
 
@@ -14,4 +14,4 @@ const routes: Routes = [{
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class UserRoutingModule { }
+export class RoleRoutingModule { }
