@@ -14,6 +14,8 @@ export class AppComponent implements  AfterViewInit {
   @ViewChild('mainSideNav') sidenav: MatSidenav;
   //private sidenav: MatSidenav;
 
+  public confirmResult: any;
+
   appName = 'My App';
   isDarkTheme = false;
   mainMenuItems;
@@ -35,6 +37,8 @@ export class AppComponent implements  AfterViewInit {
   }
 
   openDialog () {
-    this.
+    this.dialogsService
+    .confirm('Confirm Dialog', 'Are you sure you want to do this?')
+    .subscribe(res => this.confirmResult = res);
   }
 }

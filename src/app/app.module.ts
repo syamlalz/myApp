@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserModule } from './user/user.module'; 
 import { RoleModule } from './role/role.module'; 
 import { AppCommonModule} from './app-common/app-common.module';
-
+import {DialogsModule} from './dialogs/dialogs.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { AppCommonModule} from './app-common/app-common.module';
     AppCommonModule,
     UserModule,
     RoleModule,
+    DialogsModule,
     AppRoutingModule 
     
   ],
