@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {CdkTableModule} from '@angular/cdk/table';
 import {
   MatSidenavModule,
   MatToolbarModule,
@@ -10,6 +11,7 @@ import {
   MatButtonModule,
   MatTableModule,
   MatPaginatorModule,
+  MatCheckboxModule,
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DialogsModule } from '../dialogs/dialogs.module';
@@ -27,6 +29,7 @@ import {DataTableModule} from '../data-table/data-table.module';
     MatButtonModule,
     MatTableModule,
     MatPaginatorModule,
+    MatCheckboxModule,
     FlexLayoutModule,
     DialogsModule,
     DataTableModule
@@ -42,9 +45,11 @@ import {DataTableModule} from '../data-table/data-table.module';
     MatButtonModule,
     MatTableModule,
     MatPaginatorModule,
+    MatCheckboxModule,
     FlexLayoutModule,
     DialogsModule,
-    DataTableModule
+    DataTableModule,
+    CdkTableModule
   ]
 })
 export class AppCommonModule { }

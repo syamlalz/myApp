@@ -6,7 +6,7 @@ const routes: Routes = [{
   path:'users',
   component:UserPageComponent,
   data: {
-    title: 'User page'
+    title: 'Users'
   }
 }];
 

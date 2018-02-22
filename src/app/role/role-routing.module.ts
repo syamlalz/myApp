@@ -6,7 +6,7 @@ const routes: Routes = [{
   path: 'roles',
   component: RolePageComponent,
   data:{
-    title: 'Role Page'
+    title: 'Roles'
   }
 }];
 

@@ -1,17 +1,55 @@
-<mat-table #table [dataSource]="dataSource">
+<mat-table #table [dataSource]="usersDataSource">
 
 
     <!-- ID Column -->
-    <ng-container cdkColumnDef="userId">
-        <mat-header-cell *cdkHeaderCellDef mat-sort-header> ID </mat-header-cell>
-        <mat-cell *cdkCellDef="let row"> {{row.id}} </mat-cell>
-      </ng-container>
+    <ng-container matColumnDef="select">
+        <mat-header-cell *matHeaderCellDef > 
+            <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()">
 
-      <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+            </mat-checkbox>
+        </mat-header-cell>
+        <mat-cell *cdkCellDef="let row"> 
+                <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)"> 
+                </mat-checkbox>
+        </mat-cell>
+    </ng-container>
 
-      <mat-row *cdkRowDef="let row; columns: displayedColumns;">
+    <ng-container cdkColumnDef="id">
+        <mat-header-cell *cdkHeaderCellDef > ID </mat-header-cell>
+        <mat-cell *cdkCellDef="let row"> {{row.id}}  </mat-cell>
+    </ng-container>
+    <ng-container cdkColumnDef="fName">
+        <mat-header-cell *cdkHeaderCellDef > First Name </mat-header-cell>
+        <mat-cell *cdkCellDef="let row"> {{row.fName}}  </mat-cell>
+    </ng-container>
+    <ng-container cdkColumnDef="lName">
+        <mat-header-cell *cdkHeaderCellDef > Last Name </mat-header-cell>
+        <mat-cell *cdkCellDef="let row"> {{row.lName}}  </mat-cell>
+    </ng-container>
+    <ng-container cdkColumnDef="desc">
+        <mat-header-cell *cdkHeaderCellDef > Description </mat-header-cell>
+        <mat-cell *cdkCellDef="let row"> {{row.desc}}  
+                <div class="cell-wrapper">
+                        <input   type="text" [value]="row.desc"  > 
+                      </div>
+        </mat-cell>
+    </ng-container>
+    <ng-container cdkColumnDef="actions">
+            <mat-header-cell *cdkHeaderCellDef > Actions </mat-header-cell>
+            <mat-cell *cdkCellDef="let row" >
+                 <button mat-button >Edit</button> 
+            </mat-cell>
+        </ng-container> 
 
-      </mat-row> 
+    
+    <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *cdkRowDef="let row; columns: displayedColumns;"
+        (click)="selection.toggle(row)">
+    </mat-row> 
 
 </mat-table> 
 
